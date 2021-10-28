@@ -5,6 +5,16 @@ metadata:
   labels:
     app: nginx-ds
 spec:
+  minReadySeconds: 5
+  strategy:
+     type: RollingUpdate
+     rollingUpdate:
+       maxSurge: 1
+       maxUnavailable: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ds
   template:
     metadata:
       labels:
@@ -13,5 +23,6 @@ spec:
       containers:
       - name: nginx-ds
         image: nginx:1.7.9
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
