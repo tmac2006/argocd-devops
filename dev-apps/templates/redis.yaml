@@ -9,6 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: nginx
+    path: redis
     repoURL: git@github.com:tmac2006/argocd-devops.git
     targetRevision: HEAD
