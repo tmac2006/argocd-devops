@@ -1,9 +1,9 @@
-apiVersion: extensions/v1beta1
-kind: DaemonSet
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nginx-ds
   labels:
-    addonmanager.kubernetes.io/mode: Reconcile
+    app: nginx-ds
 spec:
   template:
     metadata:
